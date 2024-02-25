@@ -32,16 +32,19 @@ const styles = StyleSheet.create({
     defaultBtn :{
         height:48,
         borderRadius:25,
-        backgroundColor:Colors.danger,
         width:"95%",
         alignItems:'center',
         justifyContent:'center'
+    },
+    addBtn :{
+        backgroundColor:Colors.danger,
     },
     defaultText:{
         fontFamily : 'inter',
     },
     textBtnDefault :{
-        color :Colors.light
+        color :Colors.light,
+        fontSize:17
     },
     container2 :{
         width:'100%',
@@ -51,6 +54,50 @@ const styles = StyleSheet.create({
         alignItems:'center',
         borderRadius:50,
         backgroundColor:Colors.warning,
+    },
+    modalContainer :{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor :Colors.warning
+    },
+    modalMain:{
+        backgroundColor:"#FFF",
+        width:"90%",
+        borderRadius:10,
+        alignItems:'center',
+        height:250
+    },
+    textHeaderModal :{
+        color:Colors.primary,
+        fontSize:18,
+        textTransform:'uppercase',
+        marginTop:20
+    },
+    input :{
+        borderWidth:1,
+        padding:12,
+        borderColor:Colors.secondary,
+        borderRadius:25,
+        marginTop:18,
+        textAlign:'center',
+    },
+    containerMainbtn :{
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        width:'90%',
+        padding:12,
+        marginTop:22
+    },
+    modalBtnAdd : {
+        backgroundColor:Colors.success,
+        width:"48%"
+    },
+    modalBtnAnnu : {
+        backgroundColor:Colors.danger,
+        width:"48%"
     }
 
   });
