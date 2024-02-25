@@ -1,12 +1,26 @@
-import React, { Component } from 'react'
-import { Text, TextInput, View } from 'react-native'
+import React, { Component, useState } from 'react'
+import { Alert, Text, TextInput, View } from 'react-native'
 import styles from '../AppStyle'
 import TextCustomer from './TextCustomer'
 import Button from './Button'
 
-const Modal = ({updateParentState}) =>{
+
+const Modal = ({updateParentState,handelProduit}) =>{
   const handelChangeState = () =>{
     updateParentState(false)
+  }
+  const [val, setVal] =useState();
+  const [error,setError] = useState(false);
+
+  
+
+  const handelSubmit = () => {
+    if(val !== ''){
+      handelProduit(val);
+    }
+    else{
+     setError(true)
+    }
   }
   return(
     <View style={styles.modalContainer}>
@@ -17,11 +31,15 @@ const Modal = ({updateParentState}) =>{
             style={styles.textHeaderModal}
             />
             <TextInput 
+            value={val}
             style={styles.input}
             />
+            <Text style={styles.textError}>{error ? 'Ce champs est obligatoire':null}</Text>
           </View>
           <View style={styles.containerMainbtn}>
-                <Button style={styles.modalBtnAdd}>
+                <Button 
+                onPress={()=>handelSubmit()}
+                style={styles.modalBtnAdd}>
                   <TextCustomer name="Valider" style={styles.textBtnDefault}/>
                 </Button>
                 <Button 

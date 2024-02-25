@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
     },
     input :{
         borderWidth:1,
-        padding:12,
+        padding:10,
         borderColor:Colors.secondary,
-        borderRadius:25,
+        borderRadius:12,
         marginTop:18,
         textAlign:'center',
     },
@@ -98,6 +98,19 @@ const styles = StyleSheet.create({
     modalBtnAnnu : {
         backgroundColor:Colors.danger,
         width:"48%"
+    },
+    textError:{
+        color:Colors.danger
+    },
+    card :{
+        display :"flex",
+        backgroundColor : Colors.primary,
+        marginBottom:7,
+        width:350,
+        padding:22,
+        borderRadius :10,
+        alignItems : 'center',
+        justifyContent:'center'
     }
 
   });

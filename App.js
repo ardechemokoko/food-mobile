@@ -33,6 +33,25 @@ export default function App() {
     setVisible(newValue);
   };
 
+  const [data,setData]=useState([
+    {
+      name:"MOKOKO",
+    },
+    {
+      name:"Ardèche",
+    },
+  ]);
+
+  const handelProduit = (dt)  =>{
+    setData(prevData => [...prevData, { name: dt }]);
+  }
+
+  const renderItem = ({ item }) => (
+    <View style={styles.card}>
+      <Text style={styles.textBtnDefault}>{item.name}</Text>
+    </View>
+  );
+
 
 
   return (
@@ -43,7 +62,12 @@ export default function App() {
           <TextCustomer name="Ajouter un produit" style={styles.textBtnDefault}/>
         </Button>
         <View style={styles.container2}>
-      </View>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.name}
+        />
+        </View>
       </View>
       <Modal
           animationType="slide"
@@ -51,11 +75,12 @@ export default function App() {
           onRequestClose={() => {
             setVisible(false);
           }}
-
         >
-        <ModalCustomer updateParentState={updateParentState} />
+        <ModalCustomer 
+        handelProduit={handelProduit}
+        updateParentState={updateParentState} />
       </Modal>
-     
+      
   
       <StatusBar style="auto" />
     </View>
